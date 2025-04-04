@@ -1,0 +1,18 @@
+<section id="internships" class="section">
+  <div class="container">
+    <h2 class="section-title">Internships</h2>
+    <div class="internships-container">
+      <!-- Add your internship cards/items here -->
+      <div class="internship-card">
+        <h3>Company Name</h3>
+        <p class="position">Position/Role</p>
+        <p class="duration">Duration (e.g., June 2023 - Aug 2023)</p>
+        <ul class="responsibilities">
+          <li>Key responsibility or achievement 1</li>
+          <li>Key responsibility or achievement 2</li>
+          <li>Key responsibility or achievement 3</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section> 
