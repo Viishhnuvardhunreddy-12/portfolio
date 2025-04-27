@@ -212,7 +212,8 @@ section {
 }
 
 .hero-image img {
-    max-width: 400px;
+    max-width: 650px;
+    width: 200%;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     transition: var(--transition);
@@ -592,4 +593,3 @@ footer {
         max-width: 300px;
     }
 } 
-
