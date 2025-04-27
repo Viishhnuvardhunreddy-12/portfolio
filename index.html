@@ -1018,17 +1018,21 @@
         }
         
         @media (max-width: 768px) {
-            .skill-bubbles {
-                justify-content: center;
+            .skills-showcase {
+                grid-template-columns: 1fr;
             }
             
             .skill-bubble {
-                width: 110px;
-                height: 110px;
+                width: 100%;
+                height: auto;
             }
             
             .skill-bubble i {
                 font-size: 2rem;
+            }
+            
+            .skill-group {
+                padding: 1.5rem;
             }
         }
         
@@ -1594,18 +1598,6 @@
     <main>
         <!-- Modified Hero Section -->
         <section id="home" class="hero">
-            <!-- Floating animations -->
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            
-            <!-- Add tech icons -->
-            <i class="fab fa-react tech-icon"></i>
-            <i class="fab fa-python tech-icon"></i>
-            <i class="fab fa-js-square tech-icon"></i>
-            <i class="fab fa-html5 tech-icon"></i>
-            <i class="fab fa-css3-alt tech-icon"></i>
-            
             <div class="container">
                 <div class="hero-content">
                     <h1>Hi, I'm <span class="highlight">VIISHHNU VARDHUN REDDY</span></h1>
@@ -1616,7 +1608,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/image.jpg" alt="SYAMALLA VIISHHNU VARDHUN REDDY">
+                    <img src="images/image1.png" alt="SYAMALLA VIISHHNU VARDHUN REDDY">
                 </div>
             </div>
         </section>
@@ -1632,7 +1624,7 @@
                     <div class="projects-grid" id="projectsGrid">
                     <div class="project-card">
                         <div class="project-img">
-                            <img src="images/image2.jpg" alt="Project 1">
+                            <img src="images/image2.png" alt="Project 1">
                         </div>
                         <div class="project-info">
                             <h3>IndiSpeech-Application</h3>
@@ -1647,7 +1639,7 @@
 
                     <div class="project-card">
                         <div class="project-img">
-                            <img src="images/image3.jpg" alt="Project 2">
+                            <img src="images/image3.png" alt="Project 2">
                         </div>
                         <div class="project-info">
                             <h3>E-commerce Website</h3>
@@ -1662,22 +1654,7 @@
 
                         <div class="project-card">
                             <div class="project-img">
-                                <img src="images/image8.webp" alt="Match Card Game">
-                            </div>
-                            <div class="project-info">
-                                <h3>Match-Card-Game</h3>
-                                <p>An interactive memory card matching game built with JavaScript, featuring animations, score tracking, and multiple difficulty levels.</p>
-                                <div class="project-links">
-                                    <a href="https://github.com/Viishhnuvardhunreddy-12/match_card_game" target="_blank" class="btn primary-btn project-btn">
-                                        <i class="fab fa-github"></i> GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-img">
-                                <img src="images/reflexion.png" alt="AI Agent">
+                                <img src="images/image10.png" alt="AI Agent">
                             </div>
                             <div class="project-info">
                                 <h3>AI Agent</h3>
@@ -1692,13 +1669,43 @@
 
                     <div class="project-card">
                         <div class="project-img">
-                            <img src="images/image5.jpg" alt="Project 3">
+                            <img src="images/image5.png" alt="Project 3">
                         </div>
                         <div class="project-info">
                             <h3>Health Recommendation System</h3>
                             <p>A machine learning-based web app using multiple datasets to provide personalized health recommendations for diet, medication, and workouts.</p>
                             <div class="project-links">
                                 <a href="https://github.com/Viishhnuvardhunreddy-12" target="_blank" class="btn primary-btn project-btn">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/image8.png" alt="Match Card Game">
+                        </div>
+                        <div class="project-info">
+                            <h3>Match-Card-Game</h3>
+                            <p>An interactive memory card matching game built with JavaScript, featuring animations, score tracking, and multiple difficulty levels.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/match_card_game" target="_blank" class="btn primary-btn project-btn">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/image9.png" alt="AI Health Tracker">
+                        </div>
+                        <div class="project-info">
+                            <h3>AI Health Tracker</h3>
+                            <p>An AI-powered health tracking application that monitors health metrics, provides personalized insights, and recommends healthy habits using machine learning.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/ai-health-tracker" target="_blank" class="btn primary-btn project-btn">
                                     <i class="fab fa-github"></i> GitHub
                                 </a>
                             </div>
@@ -1715,6 +1722,7 @@
                     <div class="project-nav-dot" data-index="2"></div>
                     <div class="project-nav-dot" data-index="3"></div>
                     <div class="project-nav-dot" data-index="4"></div>
+                    <div class="project-nav-dot" data-index="5"></div>
                 </div>
             </div>
         </section>
@@ -1786,6 +1794,26 @@
                             <h3>Backend Development</h3>
                         </div>
                         <div class="skill-bubbles">
+                            <div class="skill-bubble" data-level="82">
+                                <div class="skill-bubble-inner">
+                                <i class="fas fa-plug"></i>
+                                    <span>API Integration</span>
+                                </div>
+                                <svg class="skill-circle" width="120" height="120" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54" />
+                                    <circle class="skill-circle-fill" cx="60" cy="60" r="54" style="--skill-percent: 82" />
+                                </svg>
+                            </div>
+                            <div class="skill-bubble" data-level="78">
+                                <div class="skill-bubble-inner">
+                                <i class="fas fa-flask"></i>
+                                    <span>Flask</span>
+                                </div>
+                                <svg class="skill-circle" width="120" height="120" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54" />
+                                    <circle class="skill-circle-fill" cx="60" cy="60" r="54" style="--skill-percent: 78" />
+                                </svg>
+                            </div>
                             <div class="skill-bubble" data-level="80">
                                 <div class="skill-bubble-inner">
                                 <i class="fab fa-node-js"></i>
@@ -1833,14 +1861,56 @@
                                 <i class="fab fa-java"></i>
                                     <span>Java</span>
                                 </div>
-                                <svg class="skill-circle" width="120" height="120" viewBox="0 0 120 120">
+                                <svg class="skill-circle" width="130" height="120" viewBox="0 0 120 120">
                                     <circle class="skill-circle-bg" cx="60" cy="60" r="54" />
                                     <circle class="skill-circle-fill" cx="60" cy="60" r="54" style="--skill-percent: 50" />
                                 </svg>
                             </div>
                         </div>
-                    </div>
+                    </div>  
                     
+                    <!-- Interests -->
+                    <div class="skill-group">
+                        <div class="skill-group-header">
+                            <div class="skill-icon-container">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>Fields of Interest</h3>
+                        </div>
+                        <div class="skill-bubbles">
+                            <div class="skill-bubble" data-level="90">
+                                <div class="skill-bubble-inner">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Web Dev</span>
+                                </div>
+                                <svg class="skill-circle" width="120" height="120" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54" />
+                                    <circle class="skill-circle-fill" cx="60" cy="60" r="54" style="--skill-percent: 90" />
+                                </svg>
+                            </div>
+                            <div class="skill-bubble" data-level="92">
+                                <div class="skill-bubble-inner">
+                                    <i class="fas fa-robot"></i>
+                                    <span>AI & ML</span>
+                                </div>
+                                <svg class="skill-circle" width="120" height="120" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54" />
+                                    <circle class="skill-circle-fill" cx="60" cy="60" r="54" style="--skill-percent: 92" />
+                                </svg>
+                            </div>
+                            <div class="skill-bubble" data-level="88">
+                                <div class="skill-bubble-inner">
+                                    <i class="fas fa-brain"></i>
+                                    <span>Gen AI</span>
+                                </div>
+                                <svg class="skill-circle" width="120" height="120" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54" />
+                                    <circle class="skill-circle-fill" cx="60" cy="60" r="54" style="--skill-percent: 88" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Tools & Technologies -->
                     <div class="skill-group">
                         <div class="skill-group-header">
@@ -1885,7 +1955,6 @@
                             <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_prompt-design-in-vertex-ai-skill-badge-was-activity-7294653922843992067-r9Sm?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAExOg1wB-HDYjeIX1GoVushnoYWC5UxKfl0&utm_campaign=copy_link" class="cert-link" target="_blank">View Certificate</a>
                         </div>
                     </div>
-                    
                     <div class="cert-card">
                         <div class="cert-icon-wrapper">
                         <div class="cert-icon">
@@ -1900,7 +1969,6 @@
                             <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_im-thrilled-to-share-that-ive-earned-a-activity-7249787540839227392-SF84?utm_source=share&utm_medium=member_android" class="cert-link" target="_blank">View Certificate</a>
                         </div>
                     </div>
-                    
                     <div class="cert-card">
                         <div class="cert-icon-wrapper">
                         <div class="cert-icon">
@@ -1915,7 +1983,6 @@
                             <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_im-thrilled-to-share-that-ive-earned-a-activity-7249790230851919872-ENDp?utm_source=share&utm_medium=member_android" class="cert-link" target="_blank">View Certificate</a>
                         </div>
                     </div>
-
                     <div class="cert-card">
                         <div class="cert-icon-wrapper">
                         <div class="cert-icon">
@@ -1930,7 +1997,6 @@
                             <a href="https://drive.google.com/drive/folders/1-5oe8riEfnKTHBA0LmTCE0GjS4pNMrQ8" class="cert-link" target="_blank">View Certificate</a>
                         </div>
                     </div>
-
                     <div class="cert-card">
                         <div class="cert-icon-wrapper">
                         <div class="cert-icon">
@@ -1945,7 +2011,6 @@
                             <a href="https://www.coursera.org/account/accomplishments/verify/NK3T3KCV2SBW" class="cert-link" target="_blank">View Certificate</a>
                         </div>
                     </div>
-
                     <div class="cert-card">
                         <div class="cert-icon-wrapper">
                         <div class="cert-icon">
@@ -1995,6 +2060,40 @@
                                 <span>User Authentication</span>
                                 <span>Responsive Design</span>
                                 <span>E-Commerce</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="internship-card">
+                        <div class="internship-header">
+                            <div class="internship-company">
+                                <h3>Future Interns</h3>
+                                <p class="internship-position">Machine Learning Intern</p>
+                            </div>
+                            <div class="internship-duration">
+                                <p>April 8, 2025 - May 15, 2025</p>
+                                <p class="internship-location"><i class="fas fa-map-marker-alt"></i> Remote</p>
+                            </div>
+                        </div>
+                        <div class="internship-content">
+                            <p>During my internship at Future Interns, I successfully completed significant machine learning projects focused on real-world problem-solving:</p>
+                            <ul class="internship-achievements">
+                                <li>Developed a Sales Forecasting Model using Prophet, Pandas, and Matplotlib, predicting retail sales trends with trend and seasonality analysis.</li>
+                                <li>Built a Stock Price Prediction Web Application integrating Flask, Keras LSTM models, and Yahoo Finance API, allowing users to visualize and download future stock price predictions.</li>
+                                <li>Engineered an intelligent Customer Support Chatbot using Flask and Sentence Transformers, capable of dynamically training on any uploaded customer service CSV to provide accurate query responses.</li>
+                                <li>Applied key machine learning concepts such as time series forecasting, deep learning, natural language processing, and semantic search to practical business scenarios.</li>
+                                <li>Enhanced web application user experiences by integrating interactive Chart.js visualizations and implementing secure file upload/download systems.</li>
+                            </ul>
+                            <div class="internship-tech">
+                                <span>Python</span>
+                                <span>Machine Learning</span>
+                                <span>Deep Learning (LSTM)</span>
+                                <span>Prophet</span>
+                                <span>Pandas</span>
+                                <span>Flask</span>
+                                <span>Chart.js</span>
+                                <span>NLP</span>
+                                <span>Semantic Search</span>
+                                <span>Time Series Forecasting</span>
                             </div>
                         </div>
                     </div>
@@ -2262,8 +2361,11 @@
                         c.style.opacity = '0.4';
                         c.style.transform = 'scale(0.95)';
                         c.style.zIndex = '1';
-                        c.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
-                        c.style.borderColor = 'var(--light-gray)';
+                    }
+                    
+                    // Add progress indicator for auto-scroll
+                    if (isAutoScroll) {
+                        addProgressIndicator(card);
                     }
                 });
                 
@@ -2283,11 +2385,6 @@
                 
                 // Update navigation dots immediately
                 updateNavDots(index);
-                
-                // Add progress indicator for auto-scroll
-                if (isAutoScroll) {
-                    addProgressIndicator(card);
-                }
                 
                 // Allow next scroll after animation completes
                 setTimeout(() => {
@@ -2414,4 +2511,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
