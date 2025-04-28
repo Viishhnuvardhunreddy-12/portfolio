@@ -575,21 +575,62 @@ footer {
 }
 
 @media (max-width: 576px) {
+    .container {
+        padding: 0 8px;
+    }
+    section {
+        padding: 40px 0;
+    }
     .projects-grid,
     .cert-container {
         grid-template-columns: 1fr;
     }
-    
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+    .section-title {
+        font-size: 1.3rem;
+    }
     .cta-buttons {
         flex-direction: column;
         gap: 10px;
     }
-    
     .hero-image img {
-        max-width: 300px;
+        max-width: 220px;
+        width: 100%;
     }
-} 
+    .btn, .primary-btn, .secondary-btn {
+        padding: 10px 16px;
+        font-size: 1rem;
+    }
+    .navbar {
+        padding: 12px 4px;
+    }
+    .contact-info,
+    .contact-form {
+        padding: 16px;
+    }
+    .project-img {
+        height: 140px;
+    }
+    .skill-item {
+        padding: 12px;
+    }
+    .cert-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+    }
+    .cert-icon {
+        margin-bottom: 8px;
+        margin-right: 0;
+    }
+    .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+}
