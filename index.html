@@ -12,7 +12,6 @@
     <style>
         /* --- 1. VARIABLES & SETUP --- */
         :root {
-            /* Premium Palette */
             --bg-dark: #050505;
             --bg-card: rgba(255, 255, 255, 0.03);
             --bg-card-hover: rgba(255, 255, 255, 0.08);
@@ -21,8 +20,6 @@
             --white: #ffffff;
             --gray: #a0a0a0;
             --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-            
-            /* Fonts */
             --font-main: 'Outfit', sans-serif;
             --font-accent: 'Playfair Display', serif;
         }
@@ -45,20 +42,10 @@
                 radial-gradient(circle at 85% 30%, rgba(156, 124, 24, 0.05), transparent 25%);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--gold-text);
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold-text); }
 
         /* --- 2. UTILITIES & ANIMATIONS --- */
         section {
@@ -71,7 +58,6 @@
             margin: 0 auto;
         }
 
-        /* Animated Text Gradient */
         .text-gradient {
             background: var(--gold-gradient);
             -webkit-background-clip: text;
@@ -80,9 +66,7 @@
             animation: shine 5s linear infinite;
         }
 
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
+        @keyframes shine { to { background-position: 200% center; } }
 
         .section-title {
             font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -99,7 +83,6 @@
             color: var(--gold-text);
         }
 
-        /* Fade In Animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -111,7 +94,7 @@
             transform: translateY(0);
         }
 
-        /* --- 3. FLOATING NAVIGATION --- */
+        /* --- 3. NAVIGATION --- */
         header {
             position: fixed;
             top: 20px;
@@ -156,13 +139,10 @@
             transition: 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--gold-text);
-        }
-
+        .nav-links a:hover, .nav-links a.active { color: var(--gold-text); }
         .hamburger { display: none; cursor: pointer; color: white; }
 
-        /* --- 4. HERO SECTION --- */
+        /* --- 4. HERO --- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -194,9 +174,7 @@
             padding-left: 1.5rem;
         }
 
-        .hero-img-box {
-            position: relative;
-        }
+        .hero-img-box { position: relative; }
 
         .hero-img-box img {
             width: 100%;
@@ -206,19 +184,13 @@
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
 
-        .hero-img-box:hover img {
-            filter: grayscale(0%);
-            transform: scale(1.02);
-        }
+        .hero-img-box:hover img { filter: grayscale(0%); transform: scale(1.02); }
 
-        /* Abstract glowing circle behind image */
         .glow-circle {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
+            width: 80%; height: 80%;
             background: var(--gold-gradient);
             filter: blur(80px);
             opacity: 0.3;
@@ -241,8 +213,6 @@
             border-radius: 5px;
             text-decoration: none;
             transition: 0.3s;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn:hover {
@@ -251,12 +221,9 @@
             box-shadow: 0 0 20px rgba(253, 185, 49, 0.4);
         }
 
-        /* --- 5. PROJECTS (Advanced Carousel) --- */
-        .project-wrapper {
-            position: relative;
-            padding: 2rem 0;
-        }
-
+        /* --- 5. PROJECTS --- */
+        .project-wrapper { position: relative; padding: 2rem 0; }
+        
         .project-track {
             display: flex;
             gap: 2rem;
@@ -266,7 +233,6 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-
         .project-track::-webkit-scrollbar { display: none; }
 
         .project-card {
@@ -278,6 +244,8 @@
             overflow: hidden;
             transition: 0.4s;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -293,30 +261,11 @@
             border-bottom: var(--glass-border);
         }
 
-        .p-content {
-            padding: 2rem;
-        }
+        .p-content { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+        .p-content h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--white); }
+        .p-content p { font-size: 0.9rem; color: var(--gray); margin-bottom: 1.5rem; flex: 1; }
 
-        .p-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--white);
-        }
-
-        .p-content p {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            min-height: 60px;
-        }
-
-        .tech-stack {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-
+        .tech-stack { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
         .tech-badge {
             font-size: 0.75rem;
             padding: 0.3rem 0.8rem;
@@ -326,20 +275,46 @@
             border: 1px solid rgba(253, 185, 49, 0.2);
         }
 
-        .link-group {
-            display: flex;
-            gap: 1rem;
-        }
-
+        .link-group { display: flex; gap: 1rem; margin-top: auto; }
         .link-group a {
+            flex: 1;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 5px;
             font-size: 0.9rem;
-            color: var(--white);
             text-decoration: none;
-            border-bottom: 1px solid var(--gold-text);
-            padding-bottom: 2px;
+            transition: 0.3s;
+            font-weight: 500;
         }
 
-        /* --- 6. SKILLS (Modern Grid) --- */
+        .code-btn { background: rgba(255,255,255,0.1); color: var(--white); }
+        .code-btn:hover { background: var(--white); color: var(--bg-dark); }
+        
+        .video-btn { border: 1px solid var(--gold-text); color: var(--gold-text); }
+        .video-btn:hover { background: var(--gold-text); color: var(--bg-dark); }
+
+        .video-btn.disabled { opacity: 0.5; cursor: not-allowed; border-color: var(--gray); color: var(--gray); }
+        .video-btn.disabled:hover { background: transparent; color: var(--gray); }
+
+        /* Toast Notification for "Coming Soon" */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold-text);
+            color: var(--bg-dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            z-index: 2000;
+            display: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: fadeUp 0.3s ease;
+        }
+        @keyframes fadeUp { from { opacity: 0; transform: translate(-50%, 20px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+        /* --- 6. SKILLS --- */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -369,14 +344,9 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .skill-list span {
-            display: block;
-            margin: 0.5rem 0;
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
+        .skill-list span { display: block; margin: 0.5rem 0; color: var(--gray); font-size: 0.95rem; }
 
-        /* --- 7. CERTIFICATIONS (Masonry Grid) --- */
+        /* --- 7. CERTIFICATIONS --- */
         .cert-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -397,110 +367,39 @@
         }
 
         .cert-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: var(--gold-gradient);
-            opacity: 0;
-            transition: 0.3s;
+            content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 3px;
+            background: var(--gold-gradient); opacity: 0; transition: 0.3s;
         }
 
-        .cert-card:hover {
-            transform: translateX(5px);
-            background: var(--bg-card-hover);
-        }
+        .cert-card:hover { transform: translateX(5px); background: var(--bg-card-hover); }
+        .cert-card:hover::before { opacity: 1; }
 
-        .cert-card:hover::before {
-            opacity: 1;
-        }
-
-        .cert-details h4 {
-            font-size: 1.1rem;
-            line-height: 1.3;
-            margin-bottom: 0.3rem;
-            color: var(--white);
-        }
-
-        .cert-details p {
-            font-size: 0.85rem;
-            color: var(--gold-text);
-            margin-bottom: 0.5rem;
-        }
-
-        .view-cred {
-            font-size: 0.8rem;
-            color: var(--gray);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+        .cert-details h4 { font-size: 1.1rem; line-height: 1.3; margin-bottom: 0.3rem; color: var(--white); }
+        .cert-details p { font-size: 0.85rem; color: var(--gold-text); margin-bottom: 0.5rem; }
         
+        .view-cred {
+            font-size: 0.8rem; color: var(--gray); text-decoration: none;
+            display: flex; align-items: center; gap: 5px;
+        }
         .view-cred:hover { color: var(--white); }
 
-        /* --- 8. INTERNSHIPS (Timeline Style) --- */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        /* --- 8. TIMELINE --- */
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
         .timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: rgba(255,255,255,0.1);
-            top: 0;
-            bottom: 0;
-            left: 0;
-            margin-left: -1px;
+            content: ''; position: absolute; width: 2px;
+            background: rgba(255,255,255,0.1); top: 0; bottom: 0; left: 0; margin-left: -1px;
         }
 
-        .timeline-item {
-            padding: 0 0 3rem 2rem;
-            position: relative;
-        }
-
+        .timeline-item { padding: 0 0 3rem 2rem; position: relative; }
         .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background: var(--gold-text);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--gold-text);
+            content: ''; position: absolute; left: -6px; top: 5px; width: 12px; height: 12px;
+            background: var(--gold-text); border-radius: 50%; box-shadow: 0 0 10px var(--gold-text);
         }
 
-        .t-date {
-            font-size: 0.9rem;
-            color: var(--gold-text);
-            margin-bottom: 0.5rem;
-            display: block;
-            font-weight: 600;
-        }
-
-        .t-content {
-            background: var(--bg-card);
-            border: var(--glass-border);
-            padding: 1.5rem;
-            border-radius: 10px;
-        }
-
-        .t-content h3 {
-            font-size: 1.3rem;
-        }
-
-        .t-content h4 {
-            font-size: 1rem;
-            color: var(--gray);
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
+        .t-date { font-size: 0.9rem; color: var(--gold-text); margin-bottom: 0.5rem; display: block; font-weight: 600; }
+        .t-content { background: var(--bg-card); border: var(--glass-border); padding: 1.5rem; border-radius: 10px; }
+        .t-content h3 { font-size: 1.3rem; }
+        .t-content h4 { font-size: 1rem; color: var(--gray); margin-bottom: 1rem; font-weight: 400; }
 
         /* --- 9. CONTACT --- */
         .contact-box {
@@ -513,70 +412,30 @@
             margin: 0 auto;
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .input-group {
-            position: relative;
-        }
-
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; text-align: left; }
+        .input-group { position: relative; }
         .input-group.full { grid-column: 1 / -1; }
 
         input, textarea {
-            width: 100%;
-            background: transparent;
-            border: none;
+            width: 100%; background: transparent; border: none;
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding: 10px 0;
-            color: var(--white);
-            font-family: var(--font-main);
-            font-size: 1rem;
-            transition: 0.3s;
+            padding: 10px 0; color: var(--white);
+            font-family: var(--font-main); font-size: 1rem; transition: 0.3s;
         }
+        input:focus, textarea:focus { outline: none; border-bottom-color: var(--gold-text); }
+        label { font-size: 0.8rem; color: var(--gray); display: block; margin-bottom: 5px; }
 
-        input:focus, textarea:focus {
-            outline: none;
-            border-bottom-color: var(--gold-text);
-        }
-
-        label {
-            font-size: 0.8rem;
-            color: var(--gray);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
             header { top: 0; padding: 0; }
-            .navbar {
-                border-radius: 0;
-                width: 100%;
-                justify-content: space-between;
-                border: none;
-                border-bottom: var(--glass-border);
-            }
+            .navbar { border-radius: 0; width: 100%; justify-content: space-between; border: none; border-bottom: var(--glass-border); }
             .nav-links {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: #0a0a0a;
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                transform: translateY(-150%);
-                transition: 0.4s;
-                text-align: center;
+                position: fixed; top: 60px; left: 0; width: 100%; background: #0a0a0a;
+                flex-direction: column; padding: 2rem; gap: 1.5rem;
+                transform: translateY(-150%); transition: 0.4s; text-align: center;
             }
             .nav-links.active { transform: translateY(0); }
             .hamburger { display: block; font-size: 1.5rem; }
-            
             .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
             .hero-text p { border-left: none; padding: 0; margin: 0 auto 2rem; }
             .project-card { min-width: 85vw; }
@@ -586,6 +445,8 @@
 </head>
 
 <body>
+
+    <div id="toast" class="toast">Video Coming Soon!</div>
 
     <header>
         <nav class="navbar">
@@ -635,7 +496,8 @@
                             </div>
                             <p>Interactive dashboard analyzing U.S. EV adoption trends, market growth, and clean fuel eligibility insights.</p>
                             <div class="link-group">
-                                <a href="https://github.com/Viishhnuvardhunreddy-12/ELECTRIC-VEHICLE-ANALYSIS-using-Power-BI" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/ELECTRIC-VEHICLE-ANALYSIS-using-Power-BI" target="_blank" class="code-btn"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_powerbi-dataanalytics-electricvehicles-activity-7367917717691002880-DNZ-?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAExOg1wB-HDYjeIX1GoVushnoYWC5UxKfl0" target="_blank" class="video-btn"><i class="fas fa-play"></i> Video</a>
                             </div>
                         </div>
                     </div>
@@ -651,7 +513,8 @@
                             </div>
                             <p>End-to-end forecasting model using Random Forest & XGBoost to predict store sales with high accuracy.</p>
                             <div class="link-group">
-                                <a href="https://github.com/Viishhnuvardhunreddy-12/Data-Science-and-Analytics-Projects" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/Data-Science-and-Analytics-Projects/blob/main/Rossmann%20sales%20Prediction.ipynb" target="_blank" class="code-btn"><i class="fab fa-github"></i> Code</a>
+                                <a href="#" class="video-btn video-soon"><i class="fas fa-clock"></i> Video</a>
                             </div>
                         </div>
                     </div>
@@ -667,7 +530,8 @@
                             </div>
                             <p>A Full-stack Web App converting speech-to-text, translating it, and converting it back to speech using AI.</p>
                             <div class="link-group">
-                                <a href="https://github.com/Viishhnuvardhunreddy-12/IndiSpeech-Application" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/INDISPEECH-LANGUAGE-TRANSLATOR-" target="_blank" class="code-btn"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_indispeech-speechtranslation-multilingualindia-activity-7316680806142287872-AHP6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExOg1wB-HDYjeIX1GoVushnoYWC5UxKfl0" target="_blank" class="video-btn"><i class="fas fa-play"></i> Video</a>
                             </div>
                         </div>
                     </div>
@@ -683,7 +547,8 @@
                             </div>
                             <p>Smart health monitoring application providing personalized insights and habit recommendations.</p>
                             <div class="link-group">
-                                <a href="https://github.com/Viishhnuvardhunreddy-12/ai-health-tracker" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/ai-health-tracker" target="_blank" class="code-btn"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_ai-healthtech-innovation-activity-7328993155452719106-fYq-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExOg1wB-HDYjeIX1GoVushnoYWC5UxKfl0" target="_blank" class="video-btn"><i class="fas fa-play"></i> Video</a>
                             </div>
                         </div>
                     </div>
@@ -699,10 +564,61 @@
                             </div>
                             <p>Interactive hill climbing game controlled entirely by hand gestures via computer vision.</p>
                             <div class="link-group">
-                                <a href="https://github.com/Viishhnuvardhunreddy-12/Hand-Gesture-Control" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/Hand-Gesture-Control" target="_blank" class="code-btn"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_gesturecontrol-computervision-opencv-activity-7325894809544523778-d1Ij?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExOg1wB-HDYjeIX1GoVushnoYWC5UxKfl0" target="_blank" class="video-btn"><i class="fas fa-play"></i> Video</a>
                             </div>
                         </div>
                     </div>
+
+                    <div class="project-card">
+                        <img src="images/image3.png" alt="E-Commerce" class="p-img" loading="lazy">
+                        <div class="p-content">
+                            <h3>E-Commerce Website</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML/CSS</span>
+                                <span class="tech-badge">JS</span>
+                                <span class="tech-badge">Web</span>
+                            </div>
+                            <p>Modern e-commerce platform with responsive UI, dynamic content, and interactive shopping features.</p>
+                            <div class="link-group">
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/E-commerce" target="_blank" class="code-btn"><i class="fab fa-github"></i> Code</a>
+                                <a href="#" class="video-btn video-soon"><i class="fas fa-clock"></i> Video</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/image10.png" alt="AI Agent" class="p-img" loading="lazy">
+                        <div class="p-content">
+                            <h3>AI Agent</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">LangGraph</span>
+                                <span class="tech-badge">NLP</span>
+                            </div>
+                            <p>A conversational AI agent designed to assist with tasks, answer questions, and provide recommendations.</p>
+                            <div class="link-group">
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/langgraph_project1/tree/main/langgraph/3_reflexion_agent" target="_blank" class="code-btn"><i class="fab fa-github"></i> Code</a>
+                                <a href="#" class="video-btn video-soon"><i class="fas fa-clock"></i> Video</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/image5.png" alt="Health System" class="p-img" loading="lazy">
+                        <div class="p-content">
+                            <h3>Health Rec System</h3>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Machine Learning</span>
+                                <span class="tech-badge">Web App</span>
+                            </div>
+                            <p>ML-based web app providing personalized health recommendations for diet, medication, and workouts.</p>
+                            <div class="link-group">
+                                <a href="https://github.com/Viishhnuvardhunreddy-12/medicine-recommendation-system/tree/main" target="_blank" class="code-btn"><i class="fab fa-github"></i> Code</a>
+                                <a href="#" class="video-btn video-soon"><i class="fas fa-clock"></i> Video</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -760,63 +676,63 @@
                     <div class="cert-details">
                         <h4>Prompt Design in Vertex AI</h4>
                         <p>Google Cloud | 2025</p>
-                        <a href="#" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_prompt-design-in-vertex-ai-skill-badge-was-activity-7294653922843992067-r9Sm?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAExOg1wB-HDYjeIX1GoVushnoYWC5UxKfl0&utm_campaign=copy_link" target="_blank" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <div class="cert-details">
                         <h4>GenAI Powered Data Analytics</h4>
                         <p>Tata Group | 2025</p>
-                        <a href="#" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_forage-certificate-activity-7341505820385267712-NkKZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExOg1wB-HDYjeIX1GoVushnoYWC5UxKfl0URL_ADDRESS" target="_blank" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <div class="cert-details">
                         <h4>Data Analytics Virtual Experience</h4>
                         <p>Deloitte Australia | 2025</p>
-                        <a href="#" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_forage-certificate-activity-7333809467165200384-8pfb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExOg1wB-HDYjeIX1GoVushnoYWC5UxKfl0" target="_blank" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <div class="cert-details">
                         <h4>Project Management</h4>
                         <p>Accenture North America | 2025</p>
-                        <a href="#" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_forage-certificate-activity-7334201125627199488-ILFT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExOg1wB-HDYjeIX1GoVushnoYWC5UxKfl0" target="_blank" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <div class="cert-details">
                         <h4>Data Analytics with Python</h4>
                         <p>NPTEL | 2024</p>
-                        <a href="#" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_im-thrilled-to-share-that-ive-earned-a-activity-7249790230851919872-ENDp?utm_source=share&utm_medium=member_android" target="_blank" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <div class="cert-details">
                         <h4>Programming in Java</h4>
                         <p>NPTEL | 2024</p>
-                        <a href="#" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.linkedin.com/posts/viishhnu-vardhun-reddy-syamalla_im-thrilled-to-share-that-ive-earned-a-activity-7249787540839227392-SF84?utm_source=share&utm_medium=member_android" target="_blank" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <div class="cert-details">
                         <h4>Interactivity with JavaScript</h4>
                         <p>Coursera | 2022</p>
-                        <a href="#" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://drive.google.com/drive/folders/1-5oe8riEfnKTHBA0LmTCE0GjS4pNMrQ8" target="_blank" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <div class="cert-details">
                         <h4>First Web App with Python/Flask</h4>
                         <p>Coursera | 2022</p>
-                        <a href="#" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/NK3T3KCV2SBW" target="_blank" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="cert-card">
                     <div class="cert-details">
                         <h4>AWS S3 Basics</h4>
                         <p>Coursera | 2022</p>
-                        <a href="#" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/ALC6795GEVRZ" target="_blank" class="view-cred">Verify <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -894,7 +810,7 @@
 
     <footer>
         <div class="container" style="text-align: center; color: var(--gray); font-size: 0.9rem; padding: 2rem 0;">
-            <p>&copy; 2025 Syamalla Viishhnu Vardhun Reddy. Built with <i class="fas fa-code" style="color:var(--gold-text)"></i> & AI.</p>
+            <p>&copy; 2025 Syamalla Viishhnu Vardhun Reddy.</p>
         </div>
     </footer>
 
@@ -908,7 +824,6 @@
             hamburger.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
 
-        // Close menu on click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -916,7 +831,7 @@
             });
         });
 
-        // --- 2. Scroll Animation (Intersection Observer) ---
+        // --- 2. Scroll Animation ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -932,13 +847,21 @@
             e.preventDefault();
             const name = document.getElementById('name').value;
             const message = document.getElementById('message').value;
-            
-            // Mailto trigger
             window.location.href = `mailto:viishhnureddy@gmail.com?subject=Portfolio Contact: ${name}&body=${message}`;
             this.reset();
         });
 
-        // --- 4. Navbar Blur on Scroll ---
+        // --- 4. Video Coming Soon Logic ---
+        document.querySelectorAll('.video-soon').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const toast = document.getElementById('toast');
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 3000);
+            });
+        });
+
+        // --- 5. Navbar Blur ---
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
